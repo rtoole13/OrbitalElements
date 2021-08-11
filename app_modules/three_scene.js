@@ -24,12 +24,12 @@ function initializeScene(){
     scene = new THREE.Scene();
     var loader = new THREE.CubeTextureLoader();
     var cubeMap = loader.load([
-        '/assets/textures/sky_posx.png',
-        '/assets/textures/sky_negx.png',
-        '/assets/textures/sky_posz.png',
-        '/assets/textures/sky_negz.png',
-        '/assets/textures/sky_posy.png',
-        '/assets/textures/sky_negy.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_posx.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_negx.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_posz.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_negz.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_posy.png',
+        'https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/sky_negy.png',
     ]);
     scene.background = cubeMap;
 
@@ -46,11 +46,11 @@ function initializeScene(){
 
     // Reference plane
     var planeGeom = new THREE.PlaneGeometry(250, 250);
-    var alphaMap = new THREE.TextureLoader().load('/assets/textures/plane_alpha.png' );
+    var alphaMap = new THREE.TextureLoader().load('https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/plane_alpha.png' );
     // alphaMap.wrapS = THREE.RepeatWrapping;
     // alphaMap.wrapT = THREE.RepeatWrapping;
     // alphaMap.repeat.set(2, 2);
-    var texture = new THREE.TextureLoader().load('/assets/textures/checkerboard-pattern.jpg');
+    var texture = new THREE.TextureLoader().load('https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/checkerboard-pattern.jpg');
     // texture.wrapS = THREE.RepeatWrapping;
     // texture.wrapT = THREE.RepeatWrapping;
     // texture.repeat.set(2, 2);
