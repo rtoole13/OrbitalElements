@@ -171,7 +171,7 @@ class EllipticalTrajectory {
 
     createOrbitalPlane(){
         var planeGeom = new THREE.PlaneGeometry(250, 250);
-        var alphaMap = new THREE.TextureLoader().load('https://rtoole13.github.io/OrbitalElements/rtoole13.github.io/OrbitalElements/assets/textures/plane_alpha.png' );
+        var alphaMap = new THREE.TextureLoader().load('assets/textures/plane_alpha.png' );
         var planeCaptureMaterial = new THREE.MeshBasicMaterial({color: 0xa8ab7b, side: THREE.DoubleSide, alphaMap: alphaMap, transparent: true, opacity: 1})
         var referencePlane = new THREE.Mesh(planeGeom, planeCaptureMaterial);
         return referencePlane;
