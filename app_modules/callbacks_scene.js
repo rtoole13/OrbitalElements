@@ -34,6 +34,15 @@ function orbitalPlaneToggled(showPlane){
     ellipticalTrajectory.setOrbitalPlaneVisibility(showPlane);
 }
 
+function satteliteDirectionToggled(showSatelliteDirection){
+    ellipticalTrajectory.setOrbitalDirectionVisibility(showSatelliteDirection);
+}
+
+function orbitalPositionToggled(showOrbitalPosition){
+    ellipticalTrajectory.setOrbitalPositionVisibility(showOrbitalPosition);
+}
+
+
 export {
     onWindowResize,
     semimajorAxisChanged,
@@ -42,5 +51,7 @@ export {
     inclinationChanged,
     longitudeOfAscendingNodeChanged,
     trueAnomalyChanged,
-    orbitalPlaneToggled
+    orbitalPlaneToggled,
+    satteliteDirectionToggled,
+    orbitalPositionToggled
 }

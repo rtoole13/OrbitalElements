@@ -12,7 +12,10 @@ function initializeGui(){
         inclination: initialValues.inclination,
         longitudeOfAscendingNode: initialValues.longitudeOfAscendingNode,
         trueAnomaly: initialValues.trueAnomaly,
-        toggleOrbitalPlane: initialValues.showOrbitalPlane
+        showOrbitalPlane: initialValues.showOrbitalPlane,
+        showSatelliteDir: initialValues.showSatelliteDirection,
+        showOrbitalPosition: initialValues.showOrbitalPosition
+
     }
     gui.add(params, 'semimajorAxis', 1, 200).onChange(() => {callbacks.semimajorAxisChanged(params.semimajorAxis)});
     gui.add(params, 'eccentricity', 0.01, 0.99).onChange(() => {callbacks.eccentricityChanged(params.eccentricity)});
@@ -20,7 +23,9 @@ function initializeGui(){
     gui.add(params, 'inclination', 0, 2 * Math.PI).onChange(() => {callbacks.inclinationChanged(params.inclination)});
     gui.add(params, 'longitudeOfAscendingNode', 0, 2 * Math.PI).onChange(() => {callbacks.longitudeOfAscendingNodeChanged(params.longitudeOfAscendingNode)});
     gui.add(params, 'trueAnomaly', 0, 2 * Math.PI).onChange(() => {callbacks.trueAnomalyChanged(params.trueAnomaly)});
-    gui.add(params, 'toggleOrbitalPlane').onChange(() => {callbacks.orbitalPlaneToggled(params.toggleOrbitalPlane)});
+    gui.add(params, 'showOrbitalPlane').onChange(() => {callbacks.orbitalPlaneToggled(params.showOrbitalPlane)});
+    gui.add(params, 'showSatelliteDir').onChange(() => {callbacks.satteliteDirectionToggled(params.showSatelliteDir)});
+    gui.add(params, 'showOrbitalPosition').onChange(() => {callbacks.orbitalPositionToggled(params.showOrbitalPosition)});
     return gui;
 }
 
