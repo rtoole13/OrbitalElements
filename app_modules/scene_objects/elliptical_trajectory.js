@@ -19,6 +19,7 @@ class EllipticalTrajectory {
         this.satellite = this.createSatellite(satelliteRadius);
         this.orbitalPlane = this.createOrbitalPlane();
         this.orbitalPositionVector = new Arrow(0, 0, 0, 9, 0, 0, 0.1, 0xffff00);
+        this.periapsisVector = new Arrow(0, 0, 0, this.periapsis, 0, 0, 0.1, 0xffffff);
         this.trajectory = null;
         this.arrowPeriapsis = null;
         this.arrowApoapsis = null;
@@ -28,6 +29,7 @@ class EllipticalTrajectory {
         this.threeObject = new THREE.Group();
         this.trajectory.add(this.gravitySource);
         this.trajectory.add(this.satellite);
+        this.trajectory.add(this.periapsisVector.object);
         this.threeObject.add(this.trajectory);
         this.setOrbitalPlaneVisibility(this.showOrbitalPlane);
         this.setOrbitalPositionVisibility(this.showOrbitalPosition);
@@ -76,6 +78,7 @@ class EllipticalTrajectory {
         this.setSatellitePosition(this.trueAnomaly);
         this.trajectory.add(this.gravitySource);
         this.trajectory.add(this.satellite);
+        this.trajectory.add(this.periapsisVector.object);
     }
 
     updateEccentricity(eccentricity){
@@ -91,11 +94,13 @@ class EllipticalTrajectory {
         this.setSatellitePosition(this.trueAnomaly);
         this.trajectory.add(this.gravitySource);
         this.trajectory.add(this.satellite);
+        this.trajectory.add(this.periapsisVector.object);
     }
 
     updateArgumentofPeriapsis(argumentofPeriapsis){
         this.argumentofPeriapsis = argumentofPeriapsis;
         this.setTrajectoryAngleInOrbitalPlane(this.argumentofPeriapsis);
+        this.periapsisVector
     }
 
     updateInclination(inclination){
@@ -240,6 +245,7 @@ class EllipticalTrajectory {
         this.arrowQuarterA.object.rotateOnAxis(new THREE.Vector3(0, 0, 1), Math.PI); // rotate the OBJECT
         this.arrowQuarterB = new Arrow(0, -this.semiminorAxis, 0, 7, 2, .75, 0.1, 0xffffff);
 
+        this.periapsisVector.updateEndPoints(new THREE.Vector3(this.semimajorAxis * this.eccentricity, 0, 0), new THREE.Vector3(this.semimajorAxis * this.eccentricity + this.periapsis, 0, 0));
         this.possiblyShowDirectionVectors();
     }
 
